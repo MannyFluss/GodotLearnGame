@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://lvqpjes7gd1c"]
+[gd_scene load_steps=3 format=3 uid="uid://lvqpjes7gd1c"]
 
 [ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="1_0wq6p"]
+[ext_resource type="PackedScene" uid="uid://c2snn174ogorw" path="res://Scenes/secondScene.tscn" id="2_027y0"]
 
 [node name="FirstScene" type="Node2D"]
 
@@ -26,5 +27,6 @@ offset_right = 699.0
 offset_bottom = 312.0
 text = "Next Scene"
 script = ExtResource("1_0wq6p")
+scene = ExtResource("2_027y0")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
