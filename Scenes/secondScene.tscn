@@ -1,3 +1,92 @@
-[gd_scene format=3 uid="uid://db30snpp2cyiu"]
+[gd_scene load_steps=3 format=3 uid="uid://db30snpp2cyiu"]
+
+[ext_resource type="Script" path="res://addons/gdsam/gdsam.gd" id="1_sxlus"]
+[ext_resource type="Script" path="res://scripts/secondScene.gd" id="1_xk74i"]
 
 [node name="secondScene" type="Node2D"]
+script = ExtResource("1_xk74i")
+
+[node name="GDSAM" type="Node" parent="."]
+script = ExtResource("1_sxlus")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GDSAM"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 179.0
+offset_top = 72.0
+offset_right = 219.0
+offset_bottom = 112.0
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -52.0
+offset_right = 271.0
+offset_bottom = 93.0
+text = "So here is something cool, this cool little plugin, makes text to speech. but it sounds like those crappy radios like going on AM Radio in the car. try it out "
+wrap_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 32.0
+offset_right = 678.0
+offset_bottom = 106.0
+text = "<-----try me"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 64.0
+offset_top = 209.0
+offset_right = 354.0
+offset_bottom = 527.0
+text = "These text boxes are also editable, you can make it say whatever you feel like.
+Godot is pretty cool, it allows me to make these scenes pretty quick and with no regards to really thinking about long term implication (if I want to which is true with scenes like these)
+"
+wrap_mode = 1
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 378.0
+offset_top = 205.0
+offset_right = 668.0
+offset_bottom = 589.0
+text = "With this project I am already facing weird choices on my expression. Do I want to curse? Should I be allowed to edit previous scenes? not too sure, Ill probably end up doing so but also creating systems and tools that make it easier for me to do so.
+(also will I really care about grammar and other stuff?)
+For now I want everything I do to be PG but maybe I become evil later on and decide not to"
+wrap_mode = 1
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+offset_left = 697.0
+offset_top = 169.0
+offset_right = 987.0
+offset_bottom = 616.0
+text = "Also all of these scenes so far really suck! I mean, I'll try and make improvements on the style in the future, it will be fun to compare how this project's UI will progress going forwards. Im guessing it will lean towards bubbles that you click through in order to progress, things that can overlay any gameplay thing that I decide to include in this project. 
+
+Ok I just made the scary button, its not that scary honestly I just started making a beat with it its pretty goofy"
+wrap_mode = 1
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+offset_left = 1189.0
+offset_top = 228.0
+offset_right = 1479.0
+offset_bottom = 612.0
+text = "Hello.
+Hello. . .
+Why have you done this. 
+Hello?
+Hello?
+Mom... Dad...
+h-h-help
+
+@@@@@@@@@@@@@"
+wrap_mode = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 760.0
+offset_top = 39.0
+offset_right = 923.0
+offset_bottom = 95.0
+text = "Scary..."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
