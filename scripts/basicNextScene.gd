@@ -14,4 +14,5 @@ func _process(delta):
 func _on_pressed():
 	#go to the scene secondScene
 	get_tree().change_scene_to_file("res://Scenes/secondScene.tscn")
+	
 	pass # Replace with function body.
