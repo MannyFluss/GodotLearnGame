@@ -1,2 +1,0 @@
-# GodotLearnGame
-Godot Learning Project

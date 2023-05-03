@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://lvqpjes7gd1c"]
+[gd_scene load_steps=2 format=3 uid="uid://lvqpjes7gd1c"]
+
+[ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="1_0wq6p"]
 
 [node name="FirstScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_right = 416.0
+offset_bottom = 192.0
+text = "ok so my first thing got deleted it was like what this
+is and the point but im lazy now ill just do sometin
+later or something
+ok stuff I want to do, rts movement"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 435.0
+offset_top = 188.0
+offset_right = 699.0
+offset_bottom = 312.0
+text = "Next Scene"
+script = ExtResource("1_0wq6p")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
