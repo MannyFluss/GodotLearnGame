@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2snn174ogorw"]
+[gd_scene load_steps=6 format=3 uid="uid://c2snn174ogorw"]
 
 [ext_resource type="Script" path="res://addons/gdsam/gdsam.gd" id="1_sxlus"]
 [ext_resource type="Script" path="res://scripts/secondScene.gd" id="1_xk74i"]
 [ext_resource type="PackedScene" uid="uid://cqo0va7q37v43" path="res://Scenes/thirdScene.tscn" id="2_n2sew"]
+[ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="4_7b1vd"]
+[ext_resource type="PackedScene" uid="uid://ibmu1sw73ngh" path="res://Scenes/funLevelScene.tscn" id="5_vn50f"]
 
 [node name="secondScene" type="Node2D"]
 script = ExtResource("1_xk74i")
@@ -10,6 +12,10 @@ thing = ExtResource("2_n2sew")
 
 [node name="GDSAM" type="Node" parent="."]
 script = ExtResource("1_sxlus")
+speed = 72
+pitch = 64
+mouth = 128
+throat = 128
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GDSAM"]
 
@@ -74,11 +80,7 @@ offset_right = 1479.0
 offset_bottom = 612.0
 text = "Hello.
 Hello. . .
-Why have you done this. 
-Hello?
-Hello?
-Mom... Dad...
-h-h-help
+I am going to fart
 
 @@@@@@@@@@@@@"
 wrap_mode = 1
@@ -90,13 +92,15 @@ offset_right = 865.0
 offset_bottom = 93.0
 text = "Scary..."
 
-[node name="Button3" type="Button" parent="."]
-offset_left = 942.0
-offset_top = 43.0
-offset_right = 1073.0
-offset_bottom = 87.0
-text = "Next Scene"
+[node name="SceneButton" type="Button" parent="."]
+offset_left = 956.0
+offset_top = 31.0
+offset_right = 1111.0
+offset_bottom = 76.0
+text = "next scene"
+script = ExtResource("4_7b1vd")
+scene = ExtResource("5_vn50f")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="SceneButton" to="SceneButton" method="_on_pressed"]

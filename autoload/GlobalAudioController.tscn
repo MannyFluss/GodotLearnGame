@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://k87nfrol07c8"]
+
+[ext_resource type="Script" path="res://scripts/GlobalScripts/GlobalAudio.gd" id="1_1o2fn"]
+[ext_resource type="AudioStream" uid="uid://blvs888bdx58a" path="res://audio/Songs/g_music.mp3" id="2_xlrdo"]
+
+[node name="GlobalAudioController" type="Node"]
+script = ExtResource("1_1o2fn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xlrdo")

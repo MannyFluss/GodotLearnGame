@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://lvqpjes7gd1c"]
+[gd_scene load_steps=4 format=3 uid="uid://lvqpjes7gd1c"]
 
 [ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="1_0wq6p"]
 [ext_resource type="PackedScene" uid="uid://c2snn174ogorw" path="res://Scenes/secondScene.tscn" id="2_027y0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ewmj3"]
+size = Vector2(100, 100)
 
 [node name="FirstScene" type="Node2D"]
 
@@ -28,5 +31,9 @@ offset_bottom = 312.0
 text = "Next Scene"
 script = ExtResource("1_0wq6p")
 scene = ExtResource("2_027y0")
+
+[node name="w" type="Sprite2D" parent="."]
+position = Vector2(1049, 63)
+texture = SubResource("PlaceholderTexture2D_ewmj3")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

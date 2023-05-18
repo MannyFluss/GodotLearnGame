@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://ibmu1sw73ngh"]
+
+[ext_resource type="Texture2D" uid="uid://bh8pob2bet6b5" path="res://assets/halloffacespng.png" id="1_4wup1"]
+[ext_resource type="Script" path="res://scripts/basicCamControl.gd" id="2_lk0ik"]
+[ext_resource type="Texture2D" uid="uid://c7h4h6nb4tir4" path="res://assets/wasd.png" id="3_5y3b7"]
+[ext_resource type="Texture2D" uid="uid://biawwbu6rrx5i" path="res://assets/exit.png" id="4_4ivs2"]
+[ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="5_46c2i"]
+
+[node name="funLevelScene" type="Node2D"]
+
+[node name="Halloffacespng" type="Sprite2D" parent="."]
+position = Vector2(1318, 554)
+texture = ExtResource("1_4wup1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 328)
+script = ExtResource("2_lk0ik")
+
+[node name="Wasd" type="Sprite2D" parent="."]
+position = Vector2(385, 76)
+scale = Vector2(0.463768, 0.389175)
+texture = ExtResource("3_5y3b7")
+
+[node name="Exit" type="Sprite2D" parent="."]
+position = Vector2(2496, 88)
+scale = Vector2(0.485507, 0.474227)
+texture = ExtResource("4_4ivs2")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -758.0
+offset_top = -254.0
+offset_right = -246.0
+offset_bottom = -46.0
+text = "dont go here your fault if you get lost!"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = -784.0
+offset_top = 944.0
+offset_right = -272.0
+offset_bottom = 1152.0
+text = "dont go here your fault if you get lost!"
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+offset_left = 1012.0
+offset_top = 1230.0
+offset_right = 1524.0
+offset_bottom = 1438.0
+text = "Hello Bozo"
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+offset_left = 998.0
+offset_top = -526.0
+offset_right = 1510.0
+offset_bottom = -318.0
+text = "Dude by exitintg the bounds I have defined for this project,
+you are RUINING the gaming experience I am so dissapointed
+that you would willingly go out of bounds of this experiene I
+as a game autor have designed for you. You should feel ashamed
+for incorrectly experiencing and using this thing I have creATED.
+very dissappoint "
+
+[node name="Button" type="Button" parent="."]
+offset_left = 2962.0
+offset_top = 50.0
+offset_right = 3296.0
+offset_bottom = 216.0
+text = "Next Scene :D hope you didnt get lost...
+Ok its been like 3 weeks since I touched this
+but Imma make a radio feature next scene... witness it"
+
+[node name="SceneButton" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = -138.0
+offset_top = 292.0
+offset_right = 324.0
+offset_bottom = 512.0
+text = "this is the real button click me"
+script = ExtResource("5_46c2i")

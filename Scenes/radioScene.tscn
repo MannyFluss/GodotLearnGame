@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj2nn3v2163ql"]
+
+[ext_resource type="Theme" uid="uid://dslvf6ywx6668" path="res://assets/themes/goofyTheme.tres" id="1_mqfwn"]
+[ext_resource type="Texture2D" uid="uid://ccam86x4b1h4j" path="res://assets/RandomImages/Color Pallete.png" id="2_3q0ml"]
+
+[node name="radioScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_mqfwn")
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 325.0
+offset_right = 1151.0
+offset_bottom = 400.0
+text = "This is my color pallete
+chosen with chatGPT 0.0"
+
+[node name="TextEdit2" type="TextEdit" parent="Control"]
+offset_left = 909.0
+offset_top = 409.0
+offset_right = 1147.0
+offset_bottom = 613.0
+text = "ok this is kinda goofy but whatever i kinda like it for now plus I can change it whenever"
+wrap_mode = 1
+
+[node name="ColorPallete" type="Sprite2D" parent="."]
+position = Vector2(1034, 158)
+rotation = 1.57217
+scale = Vector2(0.194687, 0.196667)
+texture = ExtResource("2_3q0ml")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 1199.0
+offset_right = 3000.0
+offset_bottom = 667.0
+text = "Certainly! Here's a playful color palette for your game that incorporates various tones and works well with a narrator-style text box and UI:
+
+Primary Color: #FFB900 (Vibrant Yellow)
+This vibrant yellow color can be used as the primary color for your UI elements, such as buttons, icons, and highlights. It adds a playful and energetic touch to the overall design.
+
+Accent Color: #FF4D6A (Coral Pink)
+Use this coral pink shade as an accent color to draw attention to specific elements, such as important notifications or interactive elements. It adds a lively and youthful feel to the interface.
+
+Background Color: #E5E5E5 (Light Gray)
+Opt for a light gray background color to provide a neutral and calm base for your game. It allows the other vibrant colors to stand out and ensures that the text remains readable.
+
+Text Color: #292929 (Dark Gray)
+Choose a dark gray color for your text to ensure readability against the light gray background. It creates a good contrast and allows the text to be easily legible within the UI.
+
+Secondary Color: #00C8FF (Sky Blue)
+Incorporate a sky blue shade as a secondary color to add a refreshing and calming element to the palette. It can be used for less prominent UI elements or as an alternative accent color.
+
+Highlight Color: #FFD700 (Gold)
+Introduce a touch of elegance and prestige to your game by using a gold color for highlights. This can be applied to important UI elements or to highlight selected options or text within the game.
+
+Remember to use these colors consistently throughout your game to maintain a cohesive and playful visual identity. Experiment with different combinations and variations to find the perfect balance that suits your game's style."
