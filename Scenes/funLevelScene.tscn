@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ibmu1sw73ngh"]
+[gd_scene load_steps=7 format=3 uid="uid://ibmu1sw73ngh"]
 
 [ext_resource type="Texture2D" uid="uid://bh8pob2bet6b5" path="res://assets/halloffacespng.png" id="1_4wup1"]
 [ext_resource type="Script" path="res://scripts/basicCamControl.gd" id="2_lk0ik"]
 [ext_resource type="Texture2D" uid="uid://c7h4h6nb4tir4" path="res://assets/wasd.png" id="3_5y3b7"]
 [ext_resource type="Texture2D" uid="uid://biawwbu6rrx5i" path="res://assets/exit.png" id="4_4ivs2"]
 [ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="5_46c2i"]
+[ext_resource type="PackedScene" uid="uid://cj2nn3v2163ql" path="res://Scenes/radioScene.tscn" id="6_awg1y"]
 
 [node name="funLevelScene" type="Node2D"]
 
@@ -76,3 +77,6 @@ offset_right = 324.0
 offset_bottom = 512.0
 text = "this is the real button click me"
 script = ExtResource("5_46c2i")
+scene = ExtResource("6_awg1y")
+
+[connection signal="pressed" from="Button/SceneButton" to="Button/SceneButton" method="_on_pressed"]

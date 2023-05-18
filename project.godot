@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalAudioController="*res://autoload/GlobalAudioController.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/gdsam/plugin.cfg", "res://addons/sprite_painter/plugin.cfg")
 
 [input]
 

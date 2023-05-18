@@ -1,9 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj2nn3v2163ql"]
+[gd_scene load_steps=9 format=3 uid="uid://cj2nn3v2163ql"]
 
 [ext_resource type="Theme" uid="uid://dslvf6ywx6668" path="res://assets/themes/goofyTheme.tres" id="1_mqfwn"]
+[ext_resource type="Script" path="res://scripts/radioScene.gd" id="1_t3515"]
 [ext_resource type="Texture2D" uid="uid://ccam86x4b1h4j" path="res://assets/RandomImages/Color Pallete.png" id="2_3q0ml"]
+[ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="3_n8udv"]
+[ext_resource type="PackedScene" uid="uid://chvpccx37q06d" path="res://prefabs/radio_controller.tscn" id="3_s1sau"]
+[ext_resource type="PackedScene" uid="uid://cbm4yqjeefm8p" path="res://Scenes/dialogueScene.tscn" id="4_wmw7c"]
+
+[sub_resource type="Animation" id="Animation_1p0ci"]
+resource_name = "onlyAnimation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("radioController:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(539, -259), Vector2(525, 138)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dtc1"]
+_data = {
+"onlyAnimation": SubResource("Animation_1p0ci")
+}
 
 [node name="radioScene" type="Node2D"]
+script = ExtResource("1_t3515")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -12,25 +37,65 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("1_mqfwn")
 
+[node name="SceneButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 552.0
+offset_right = 1096.0
+offset_bottom = 609.0
+text = "next scene"
+script = ExtResource("3_n8udv")
+scene = ExtResource("4_wmw7c")
+
 [node name="TextEdit" type="TextEdit" parent="Control"]
 layout_mode = 0
-offset_left = 913.0
-offset_top = 325.0
-offset_right = 1151.0
-offset_bottom = 400.0
+offset_left = 94.0
+offset_top = 337.912
+offset_right = 332.0
+offset_bottom = 412.912
 text = "This is my color pallete
 chosen with chatGPT 0.0"
 
 [node name="TextEdit2" type="TextEdit" parent="Control"]
-offset_left = 909.0
-offset_top = 409.0
-offset_right = 1147.0
-offset_bottom = 613.0
-text = "ok this is kinda goofy but whatever i kinda like it for now plus I can change it whenever"
+layout_mode = 0
+offset_left = 90.0
+offset_top = 421.912
+offset_right = 328.0
+offset_bottom = 625.912
+text = "ok this is kinda goofy but whatever i kinda like it for now plus I can change it whenever
+yeah this is pretty goofy already might have to swap it out 0.0"
 wrap_mode = 1
 
+[node name="TextEdit3" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 25.0
+offset_right = 1096.0
+offset_bottom = 229.0
+text = "ok my theme is broken but idk how to fix it and im too lazy rn honestly by the time this is seen by anybody other than me it will probably already be fixed and so will this scene"
+wrap_mode = 1
+
+[node name="TextEdit4" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 311.0
+offset_right = 1099.0
+offset_bottom = 515.0
+text = "aightsies I got audio added, now I just need one more big feature for this, which is a dialogue system so I can communicate to you without having to put these boxes everywhere..."
+wrap_mode = 1
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 481.0
+offset_right = 755.0
+offset_bottom = 580.0
+text = "presenting my new feature...
+
+(im a button click me)"
+
 [node name="ColorPallete" type="Sprite2D" parent="."]
-position = Vector2(1034, 158)
+position = Vector2(215, 170.912)
 rotation = 1.57217
 scale = Vector2(0.194687, 0.196667)
 texture = ExtResource("2_3q0ml")
@@ -60,3 +125,18 @@ Highlight Color: #FFD700 (Gold)
 Introduce a touch of elegance and prestige to your game by using a gold color for highlights. This can be applied to important UI elements or to highlight selected options or text within the game.
 
 Remember to use these colors consistently throughout your game to maintain a cohesive and playful visual identity. Experiment with different combinations and variations to find the perfect balance that suits your game's style."
+
+[node name="radioController" parent="." instance=ExtResource("3_s1sau")]
+offset_left = 539.0
+offset_top = -259.0
+offset_right = 579.0
+offset_bottom = -219.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5dtc1")
+}
+
+[connection signal="pressed" from="Control/SceneButton" to="Control/SceneButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
