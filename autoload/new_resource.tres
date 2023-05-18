@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="unlockable_song" load_steps=3 format=3 uid="uid://bjsepg0mxnxyn"]
+
+[ext_resource type="Script" path="res://autoload/new_script.gd" id="1_x6t4b"]
+[ext_resource type="AudioStream" uid="uid://blvs888bdx58a" path="res://audio/Songs/g_music.mp3" id="2_cnl56"]
+
+[resource]
+script = ExtResource("1_x6t4b")
+songStream = ExtResource("2_cnl56")
+unlocked = true
