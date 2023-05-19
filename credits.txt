@@ -1,0 +1,5 @@
+credits:
+Game Author: Manny Fluss
+	
+external collaborators:
+	Music: Liam Fahey
