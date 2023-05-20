@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccam86x4b1h4j" path="res://assets/RandomImages/Color Pallete.png" id="2_3q0ml"]
 [ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="3_n8udv"]
 [ext_resource type="PackedScene" uid="uid://chvpccx37q06d" path="res://prefabs/radio_controller.tscn" id="3_s1sau"]
-[ext_resource type="PackedScene" uid="uid://cbm4yqjeefm8p" path="res://Scenes/dialogueScene.tscn" id="4_wmw7c"]
+[ext_resource type="PackedScene" uid="uid://bk2qepcqpvm5a" path="res://Scenes/dialogueScene.tscn" id="4_wmw7c"]
 [ext_resource type="Script" path="res://addons/sprite_painter/src/main.gd" id="7_ciehb"]
 
 [sub_resource type="Animation" id="Animation_1p0ci"]
