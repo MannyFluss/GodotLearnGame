@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://bp6qp4wynbtj8"
+path="res://.godot/imported/3DScene.dialogue-e0adcbe5fd856c0731e5d496a7dec159.tres"
+
+[deps]
+
+source_file="res://resources/Dialogue/3DScene.dialogue"
+dest_files=["res://.godot/imported/3DScene.dialogue-e0adcbe5fd856c0731e5d496a7dec159.tres"]
+
+[params]
+

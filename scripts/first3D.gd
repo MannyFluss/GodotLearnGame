@@ -1,9 +1,7 @@
-extends Node2D
+extends Node3D
 
 
 @export var dialogueResource : DialogueResource
-@export var nextScene : PackedScene
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +13,12 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func goNext():
-	get_tree().change_scene_to_packed(nextScene)
+func ThisIsATest():
+	print("this is an epic test oh yeahhhhh")
+	pass
+	
+func setVis():
+	%grassMeshes.visible = true
+	
+func ballsRiseUp():
+	%AnimationPlayer.play("fun joyous animation")

@@ -1,4 +1,4 @@
-~ this_is_a_node_title
+~ start
 
 Manny: holy crap
 Manny: I have set up a dialogue Plugin, I didnt make this some guy who actually knows how to program did
@@ -17,4 +17,10 @@ Manny: I have been playing the new zelda game which has inspired me a lot, maybe
 Manny: A lot of the things in that game are pretty crazy, it almost gets to the point where the game itself is a creation tool, but it retains the nature of being a game
 Manny: Anyways, enough of me nerding out lets move on to whatever I am going to create next.
 
+
+
 => END
+
+
+#set - modify value 
+#do - function exec
