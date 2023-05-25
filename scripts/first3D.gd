@@ -22,3 +22,6 @@ func setVis():
 	
 func ballsRiseUp():
 	%AnimationPlayer.play("fun joyous animation")
+
+func enablePlayer():
+	%Player.inputEnabled = true

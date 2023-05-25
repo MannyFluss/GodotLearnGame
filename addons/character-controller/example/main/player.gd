@@ -13,6 +13,8 @@ class_name Player
 ## This script also adds submerged and emerged signals to change the 
 ## [Environment] when we are in the water.
 
+@export var inputEnabled := true
+
 @export var input_back_action_name := "move_backward"
 @export var input_forward_action_name := "move_forward"
 @export var input_left_action_name := "move_left"
@@ -35,7 +37,7 @@ func _ready():
 func _physics_process(delta):
 	var is_valid_input := Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	
-	if is_valid_input:
+	if is_valid_input and inputEnabled:
 		if Input.is_action_just_pressed(input_fly_mode_action_name):
 			fly_ability.set_active(not fly_ability.is_actived())
 		var input_axis = Input.get_vector(input_back_action_name, input_forward_action_name, input_left_action_name, input_right_action_name)
@@ -53,7 +55,7 @@ func _physics_process(delta):
 
 func _input(event: InputEvent) -> void:
 	# Mouse look (only if the mouse is captured).
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and inputEnabled:
 		rotate_head(event.relative)
 
 
