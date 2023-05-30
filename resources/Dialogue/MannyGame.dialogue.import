@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://b3fj6jmsr1ldp"
+path="res://.godot/imported/MannyGame.dialogue-d4b9f8fc92a0f1db195793b0dbb98e13.tres"
+
+[deps]
+
+source_file="res://resources/Dialogue/MannyGame.dialogue"
+dest_files=["res://.godot/imported/MannyGame.dialogue-d4b9f8fc92a0f1db195793b0dbb98e13.tres"]
+
+[params]
+

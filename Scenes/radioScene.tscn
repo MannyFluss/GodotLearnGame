@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj2nn3v2163ql"]
+[gd_scene load_steps=10 format=3 uid="uid://cj2nn3v2163ql"]
 
 [ext_resource type="Theme" uid="uid://dslvf6ywx6668" path="res://assets/themes/goofyTheme.tres" id="1_mqfwn"]
 [ext_resource type="Script" path="res://scripts/radioScene.gd" id="1_t3515"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://scripts/basicNextScene.gd" id="3_n8udv"]
 [ext_resource type="PackedScene" uid="uid://chvpccx37q06d" path="res://prefabs/radio_controller.tscn" id="3_s1sau"]
 [ext_resource type="PackedScene" uid="uid://bk2qepcqpvm5a" path="res://Scenes/dialogueScene.tscn" id="4_wmw7c"]
-[ext_resource type="Script" path="res://addons/sprite_painter/src/main.gd" id="7_ciehb"]
 
 [sub_resource type="Animation" id="Animation_1p0ci"]
 resource_name = "onlyAnimation"
@@ -140,15 +139,6 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_5dtc1")
 }
-
-[node name="SpritePainterRoot" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 524.0
-offset_top = 157.0
-offset_right = 564.0
-offset_bottom = 197.0
-script = ExtResource("7_ciehb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(566.391, 207.256)

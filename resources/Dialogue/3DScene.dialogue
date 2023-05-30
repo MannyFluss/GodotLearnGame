@@ -21,6 +21,8 @@ Manny: 1...
 do GlobalSceneInteractor.attemptFunctionCall("First3D","ballsRiseUp")
 Manny: Damn, look at that...
 Manny: alright now its time to give you control, have a nice walk
+Manny: take a leap of faith in order to proceed.
 do GlobalSceneInteractor.attemptFunctionCall("First3D","enablePlayer")
+
 
 => END

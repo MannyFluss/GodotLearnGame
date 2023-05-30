@@ -2,7 +2,7 @@ extends Node3D
 
 
 @export var dialogueResource : DialogueResource
-
+@export var nextScene : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DialogueManager.show_example_dialogue_balloon(dialogueResource,"Start")
@@ -25,3 +25,9 @@ func ballsRiseUp():
 
 func enablePlayer():
 	%Player.inputEnabled = true
+
+
+func _on_detection_dude_area_entered(area):
+	if area == %"jump of le map":
+		get_tree().change_scene_to_packed(nextScene)
+	pass # Replace with function body.

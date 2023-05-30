@@ -1,0 +1,24 @@
+~ start
+
+Manny: Heya, hope you had fun in that 3D level, that was partly my first time working with shaders (I mainly just followed a youtube video for that)
+Manny: The word "shader" is a bit missleading though, basically all shaders today kinda have nothing to do with. shading, well they do but its more "postproccessing"
+Manny: Anyways I have already been using a lot more plugins, and I am very happy with that, that 3D controller was also a plugin
+Manny: I want to take this game as an opportunity to also look back at my old games, starting with this one entitled... MannyGame. (my friends came up with that name)
+Manny: Here are some screenshots of the game
+#insert animation here
+Manny: Anyways, this was a game that I made over christmas break in about a week using the crisp-game-library which is a javascript library
+Manny: This is not the first game I made, or the most recent but it has most certanly had an impact on how I make games and what I think about them.
+Manny: What I learned with this game is that making sure your game is easily sharable is highly important, and making it accessible as well.
+Manny: When you are making a game on a scale this small, its important the amount of effort exerted in playing it feels like its being rewarded.
+Manny: I have a lot of games that are small, but I have also made them very hard to actually access and play, in fact downloading the game and setting it up likely takes longer than just... playing the game
+Manny: And to be completely honest, most of the games really are not worth that effort to bother downloading.
+Manny: This game is also in my own opinion the most fun, it has a clear progression even if its simple, and its got satisfying effects and a cohesive style
+Manny: Most of this is actually due to the crisp-game-library, it forces you to really make small projects, and it has some preset functions to make sprites and sounds
+Manny: There are some problems though, such as the game scales difficulty in a weird way, you eventually start to get xp at an insane amount and after 1 elimination you will level up
+Manny: I think this game could be expanded with cooler features, maybe some different graphics, new balance, sounds... if only there were a way to do that...
+#start game
+=> END
+
+
+#set - modify value 
+#do - function exec
