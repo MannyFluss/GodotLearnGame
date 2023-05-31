@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalAudioController="*res://autoload/GlobalAudioController.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalSceneInteractor="*res://autoload/GlobalSceneInteractor.gd"
+CommandLine="*res://autoload/CommandLine.tscn"
 
 [editor_plugins]
 
@@ -67,6 +68,16 @@ ui_ctrl={
 change_mouse_input={
 "deadzone": 0.5,
 "events": []
+}
+ui_commandLine={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":47,"key_label":0,"unicode":47,"echo":false,"script":null)
+]
+}
+ui_enter={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
 }
 
 [internationalization]
