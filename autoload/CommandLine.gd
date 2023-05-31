@@ -27,7 +27,6 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("ui_enter"):
 		submitCommand()
-		
 #toggle visibility
 func getCommandLine()->bool:
 	return $".".visible
