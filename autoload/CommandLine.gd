@@ -3,6 +3,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%CommandLineInput.clear()
+	$".".visible = false
+	
+	
 	pass # Replace with function body.
 
 
@@ -13,13 +17,17 @@ func _process(delta):
 #what do I want
 #press / to toggle the command line being active, only takes input while active
 #press enter to send command, results in the debug output
-
+#/ will not toggle if there is text being written
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_commandLine"):
+		if %CommandLineInput.text != "" and $".".visible == true:
+			return
 		setCommandLine(not getCommandLine())
+	
 	if Input.is_action_just_pressed("ui_enter"):
 		submitCommand()
+		
 #toggle visibility
 func getCommandLine()->bool:
 	return $".".visible
@@ -29,8 +37,9 @@ func setCommandLine(_set : bool):
 	if $".".visible:
 		%CommandLineInput.grab_focus()
 	if not $".".visible:
+		%CommandLineInput.clear()
 		%CommandLineInput.release_focus()
-	
+		
 func submitCommand():
 	var command = %CommandLineInput.text
 	%CommandLineInput.clear()
@@ -57,8 +66,6 @@ func interpretCommand(_command):
 	if splitCommands.is_empty() or splitCommands == PackedStringArray([]):
 		sendDebugText("Invalid Input")
 		return
-	print(splitCommands)
-	print(_command)
 	if not commands.has(splitCommands[0]):
 		sendDebugText("no command: " + splitCommands[0])
 	if splitCommands[0] == "scene":
@@ -69,7 +76,6 @@ func interpretCommand(_command):
 	#here is a big ol thing that has each of the commands
 func change_scene_command(_targetScene):
 	var updatedPath = "res://" + _targetScene + ".tscn"
-	print(updatedPath)
 	if ResourceLoader.exists(updatedPath):
 		get_tree().change_scene_to_file(updatedPath)
 	else:
@@ -77,9 +83,9 @@ func change_scene_command(_targetScene):
 
 
 
-
-
-
-
-
-
+func _on_command_line_input_text_changed():
+	if %CommandLineInput.text == "":
+		return
+	if %CommandLineInput.text[-1] == "\n":
+		%CommandLineInput.clear()
+	pass # Replace with function body.

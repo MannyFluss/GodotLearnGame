@@ -9,7 +9,14 @@
 
 [node name="funLevelScene" type="Node2D"]
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Halloffacespng" type="Sprite2D" parent="."]
+top_level = true
 position = Vector2(1318, 554)
 texture = ExtResource("1_4wup1")
 
