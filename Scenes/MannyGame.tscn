@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://bik12quo13xmn"]
+[gd_scene load_steps=3 format=3 uid="uid://bik12quo13xmn"]
 
-[node name="MannyGame" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/MannyGame.gd" id="1_vhla2"]
+[ext_resource type="Texture2D" uid="uid://cocebid8pps58" path="res://icon.svg" id="2_jgl4c"]
+
+[node name="MannyGame" type="Node3D"]
+script = ExtResource("1_vhla2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.955938)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.03266)
+texture = ExtResource("2_jgl4c")
+
+[node name="Transition" type="Node3D" parent="."]
