@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ke4lvev7gvar"]
+
+[ext_resource type="Script" path="res://scripts/Boid.gd" id="1_4spei"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_30i03"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5hv4d"]
+
+[node name="Boid" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_4spei")
+
+[node name="MyCast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.549005, 0)
+debug_shape_thickness = 5
+
+[node name="Forwards" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6503, 0)
+gizmo_extents = 1.0
+
+[node name="Cosmetic" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cosmetic"]
+mesh = SubResource("PrismMesh_30i03")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cosmetic"]
+transform = Transform3D(0.498193, 0, 0, 0, 1, 2.13163e-14, 0, -4.26326e-14, 0.485664, 0, 1.12209, -9.80962e-08)
+mesh = SubResource("CapsuleMesh_5hv4d")

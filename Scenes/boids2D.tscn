@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r4iw7vcle156"]
+
+[ext_resource type="Script" path="res://scripts/Boid2D.gd" id="1_gce8b"]
+[ext_resource type="Texture2D" uid="uid://cocebid8pps58" path="res://icon.svg" id="1_iqebp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(353, 284)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_iqebp")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch2inc4pytrhr"]
+
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/dialogueScene.gd" id="1_vael5"]
+[ext_resource type="Resource" uid="uid://bifba1kvft38i" path="res://resources/Dialogue/testDialogue.dialogue" id="2_fqwvu"]
+[ext_resource type="PackedScene" uid="uid://bkhcv3uii8kbs" path="res://Scenes/first 11 scenes/first3D.tscn" id="3_an6ux"]
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/basicNextScene.gd" id="4_dkdfo"]
+
+[node name="dialogueScene" type="Node2D"]
+script = ExtResource("1_vael5")
+dialogueResource = ExtResource("2_fqwvu")
+nextScene = ExtResource("3_an6ux")
+
+[node name="SceneButton" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 249.0
+offset_right = 752.0
+offset_bottom = 331.0
+text = "Next..."
+script = ExtResource("4_dkdfo")
+scene = ExtResource("3_an6ux")
+
+[connection signal="pressed" from="SceneButton" to="SceneButton" method="_on_pressed"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://53x8pm6pf42l"
+path="res://.godot/imported/portalAttempt.dialogue-de0ac508a3fa26ab0a8a9d5659582c2c.tres"
+
+[deps]
+
+source_file="res://resources/Dialogue/portalAttempt.dialogue"
+dest_files=["res://.godot/imported/portalAttempt.dialogue-de0ac508a3fa26ab0a8a9d5659582c2c.tres"]
+
+[params]
+

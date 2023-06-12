@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpetjbwgx4d6x"]
+
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/MannyGame.gd" id="1_4ws4d"]
+[ext_resource type="PackedScene" uid="uid://cg38df8lgt4ye" path="res://Scenes/first 11 scenes/resultOfTransition.tscn" id="2_hk3ld"]
+[ext_resource type="Resource" uid="uid://duj4d2onbvv6o" path="res://resources/Dialogue/3DsceneTransition.dialogue" id="3_osih0"]
+[ext_resource type="Texture2D" uid="uid://cocebid8pps58" path="res://icon.svg" id="4_w2nje"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ilggl"]
+
+[node name="MannyGame" type="Node3D"]
+script = ExtResource("1_4ws4d")
+nextScene = ExtResource("2_hk3ld")
+dialogue = ExtResource("3_osih0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32974, 0, -5.96163)
+mesh = SubResource("BoxMesh_ilggl")
+skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02923, 0, -2.25279)
+texture = ExtResource("4_w2nje")

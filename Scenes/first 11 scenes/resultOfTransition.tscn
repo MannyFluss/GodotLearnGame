@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://cg38df8lgt4ye"]
+
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/newScene.gd" id="1_vka3v"]
+[ext_resource type="PackedScene" uid="uid://cvwuv2mbv2vnc" path="res://Scenes/first 11 scenes/portals.tscn" id="2_s6g1i"]
+[ext_resource type="Texture2D" uid="uid://cocebid8pps58" path="res://icon.svg" id="3_om1jq"]
+[ext_resource type="Texture2D" uid="uid://crjgkrc1kli6e" path="res://assets/5hours.png" id="4_xjg41"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5rpk6"]
+size = Vector2(27.282, 15.347)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkd27"]
+disable_receive_shadows = true
+
+[sub_resource type="Animation" id="Animation_wyt1i"]
+resource_name = "SceneTransition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 10.9283),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46vej"]
+_data = {
+"SceneTransition": SubResource("Animation_wyt1i")
+}
+
+[sub_resource type="Animation" id="Animation_l4vrv"]
+resource_name = "funnyrotate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2.79253), Vector3(0, 0, 6.28319), Vector3(0, 0, 12.5664)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3sc5u"]
+_data = {
+"funnyrotate": SubResource("Animation_l4vrv")
+}
+
+[node name="newScene" type="Node3D"]
+script = ExtResource("1_vka3v")
+scene = ExtResource("2_s6g1i")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(6.04687, 0, 0, 0, 4.92211, 0, 0, 0, 1, 0, 0, -20.0299)
+texture = ExtResource("3_om1jq")
+
+[node name="TransitionCamera" type="Camera3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_5rpk6")
+surface_material_override/0 = SubResource("StandardMaterial3D_qkd27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_46vej")
+}
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(3.35744, 0, 0, 0, 2.56753, 0, 0, 0, 1, 0, 0, -18.8772)
+visible = false
+texture = ExtResource("4_xjg41")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D2"]
+libraries = {
+"": SubResource("AnimationLibrary_3sc5u")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

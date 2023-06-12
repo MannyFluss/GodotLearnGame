@@ -1,0 +1,158 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvwuv2mbv2vnc"]
+
+[ext_resource type="Script" path="res://scripts/portalsAttempt.gd" id="1_cbrot"]
+[ext_resource type="Resource" uid="uid://53x8pm6pf42l" path="res://resources/Dialogue/portalAttempt.dialogue" id="2_7kfor"]
+[ext_resource type="PackedScene" uid="uid://ce7p12bnml8re" path="res://Scenes/first 11 scenes/BoidsScene.tscn" id="3_4cauy"]
+[ext_resource type="Texture2D" uid="uid://cefwkfh7aedoo" path="res://addons/kenney_prototype_textures/green/texture_02.png" id="4_fwjom"]
+[ext_resource type="Texture2D" uid="uid://d25l1jkerl0pk" path="res://addons/kenney_prototype_textures/purple/texture_05.png" id="5_0exju"]
+[ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="6_qpxbh"]
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/PortalScript.gd" id="7_w8qot"]
+[ext_resource type="Texture2D" uid="uid://bpev26eosl21y" path="res://addons/kenney_prototype_textures/orange/texture_02.png" id="8_8mn1f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0tfe"]
+albedo_texture = ExtResource("4_fwjom")
+albedo_texture_force_srgb = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_l5ew5"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(1004, 516)
+material = SubResource("StandardMaterial3D_t0tfe")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p3xxh"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lg7sj"]
+albedo_texture = ExtResource("5_0exju")
+
+[sub_resource type="BoxMesh" id="BoxMesh_vd5rk"]
+material = SubResource("StandardMaterial3D_lg7sj")
+size = Vector3(20, 1, 20)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ng16p"]
+points = PackedVector3Array(-10, -0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, -0.5, 10, -10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0nd6"]
+albedo_texture = ExtResource("8_8mn1f")
+
+[sub_resource type="BoxMesh" id="BoxMesh_l1wnx"]
+material = SubResource("StandardMaterial3D_l0nd6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkt7s"]
+size = Vector3(100, 1, 100)
+
+[node name="portalsAttempt" type="Node3D"]
+script = ExtResource("1_cbrot")
+dialogueResource = ExtResource("2_7kfor")
+nextScene = ExtResource("3_4cauy")
+
+[node name="DirLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.310112, 0.9507, 0, -0.9507, -0.310112, 0, 0, 0)
+
+[node name="floor1" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor1"]
+mesh = SubResource("BoxMesh_l5ew5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor1"]
+shape = SubResource("ConvexPolygonShape3D_p3xxh")
+
+[node name="floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.7344)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor2"]
+mesh = SubResource("BoxMesh_vd5rk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor2"]
+shape = SubResource("ConvexPolygonShape3D_ng16p")
+
+[node name="Player" parent="." instance=ExtResource("6_qpxbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75035, 0)
+
+[node name="Portal1" type="Node3D" parent="." node_paths=PackedStringArray("DestinationPortal", "PlayerCam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.597719, 1.72886, -3.90456)
+script = ExtResource("7_w8qot")
+DestinationPortal = NodePath("../Portal2")
+PlayerCam = NodePath("../Player/Head/Camera")
+
+[node name="portalTexture" type="Sprite3D" parent="Portal1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.917574, 0.50831, -0.00159717)
+
+[node name="Marker3D" type="Marker3D" parent="Portal1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.876749, 0.00691247, 0.868902)
+
+[node name="walls" type="Node3D" parent="Portal1"]
+
+[node name="wallsw" type="MeshInstance3D" parent="Portal1/walls"]
+transform = Transform3D(0.544741, 0, 0, 0, 3.4128, 0, 0, 0, 0.46146, 0, 0.4709, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Portal1/walls"]
+transform = Transform3D(0.544741, 0, 0, 0, 3.4128, 0, 0, 0, 0.46146, -1.87048, 0.4709, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Portal1/walls"]
+transform = Transform3D(1.6416, 0, 0, 0, 0.383569, 0, 0, 0, 0.46146, -0.832101, 1.98497, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Portal1/walls"]
+transform = Transform3D(1.6416, 0, 0, 0, 0.383569, 0, 0, 0, 0.46146, -0.832101, -1.03774, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="SubViewport" type="SubViewport" parent="Portal1"]
+size = Vector2i(130, 275)
+
+[node name="Camera3D" type="Camera3D" parent="Portal1/SubViewport"]
+
+[node name="Portal2" type="Node3D" parent="." node_paths=PackedStringArray("DestinationPortal", "PlayerCam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19357, 1.72886, 3.60903)
+script = ExtResource("7_w8qot")
+DestinationPortal = NodePath("../Portal1")
+PlayerCam = NodePath("../Player/Head/Camera")
+
+[node name="portalTexture" type="Sprite3D" parent="Portal2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.917574, 0.50831, -0.00159717)
+
+[node name="Marker3D" type="Marker3D" parent="Portal2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.876749, 0.00691247, 0.868902)
+
+[node name="walls" type="Node3D" parent="Portal2"]
+
+[node name="wallsw" type="MeshInstance3D" parent="Portal2/walls"]
+transform = Transform3D(0.544741, 0, 0, 0, 3.4128, 0, 0, 0, 0.46146, 0, 0.4709, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Portal2/walls"]
+transform = Transform3D(0.544741, 0, 0, 0, 3.4128, 0, 0, 0, 0.46146, -1.87048, 0.4709, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Portal2/walls"]
+transform = Transform3D(1.6416, 0, 0, 0, 0.383569, 0, 0, 0, 0.46146, -0.832101, 1.98497, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Portal2/walls"]
+transform = Transform3D(1.6416, 0, 0, 0, 0.383569, 0, 0, 0, 0.46146, -0.832101, -1.03774, 0)
+mesh = SubResource("BoxMesh_l1wnx")
+skeleton = NodePath("../..")
+
+[node name="SubViewport" type="SubViewport" parent="Portal2"]
+size = Vector2i(130, 275)
+
+[node name="Camera3D" type="Camera3D" parent="Portal2/SubViewport"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46626, 0)
+shape = SubResource("BoxShape3D_bkt7s")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="Player"]

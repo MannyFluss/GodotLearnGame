@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://ubuoi7y70qdb"]
+
+[ext_resource type="Script" path="res://autoload/customSceneTransitions.gd" id="1_cbblk"]
+[ext_resource type="Script" path="res://scripts/individualSceneScripts/3DSceneTransition.gd" id="2_gv3j7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gx7di"]
+size = Vector2(27.282, 15.347)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmat3"]
+disable_receive_shadows = true
+
+[sub_resource type="Animation" id="Animation_wyt1i"]
+resource_name = "SceneTransition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 10.9283),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46vej"]
+_data = {
+"SceneTransition": SubResource("Animation_wyt1i")
+}
+
+[node name="customSceneTransitions" type="Node3D"]
+script = ExtResource("1_cbblk")
+
+[node name="SceneTransition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+script = ExtResource("2_gv3j7")
+
+[node name="Sprite3D" type="Sprite3D" parent="SceneTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.8888)
+
+[node name="TransitionCamera" type="Camera3D" parent="SceneTransition"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SceneTransition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("PlaneMesh_gx7di")
+surface_material_override/0 = SubResource("StandardMaterial3D_jmat3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneTransition"]
+libraries = {
+"": SubResource("AnimationLibrary_46vej")
+}

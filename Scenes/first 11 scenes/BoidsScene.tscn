@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://ce7p12bnml8re"]
+
+[ext_resource type="PackedScene" uid="uid://ke4lvev7gvar" path="res://prefabs/boid.tscn" id="1_282ko"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjk4c"]
+size = Vector3(20, 20, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q0slb"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lqhsn"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x0bmo"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o6ry1"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i71cs"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qh0ti"]
+points = PackedVector3Array(10, 10, 0.5, 10, 10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, -10, -0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5)
+
+[node name="BoidsScene" type="Node3D"]
+
+[node name="BoundingBox" type="StaticBody3D" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="Wall2" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="Wall3" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="Wall4" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="Wall5" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, 0)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="Wall6" type="MeshInstance3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, 0)
+visible = false
+mesh = SubResource("BoxMesh_jjk4c")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, 0)
+shape = SubResource("ConvexPolygonShape3D_q0slb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+shape = SubResource("ConvexPolygonShape3D_lqhsn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+shape = SubResource("ConvexPolygonShape3D_x0bmo")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10, 0)
+shape = SubResource("ConvexPolygonShape3D_o6ry1")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_i71cs")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BoundingBox"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_qh0ti")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0508216, -0.600211, 0.798226, -0.0381371, 0.799842, 0.598998, -0.997979, -7.46567e-09, -0.0635395, 24.0589, 21.492, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.632516, 0, 0.774547, 0, 1, 0, -0.774547, 0, -0.632516, 0, 0, 46.5331)
+
+[node name="BoidContainer" type="Node3D" parent="."]
+
+[node name="Boid" parent="BoidContainer" instance=ExtResource("1_282ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.95466, -2.59587)
+
+[node name="Boid2" parent="BoidContainer" instance=ExtResource("1_282ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.571936, 2.61729, -3.02805)

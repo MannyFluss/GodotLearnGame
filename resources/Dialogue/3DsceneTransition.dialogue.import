@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://duj4d2onbvv6o"
+path="res://.godot/imported/3DsceneTransition.dialogue-9e1e9a21083d87437532ca83ea58091f.tres"
+
+[deps]
+
+source_file="res://resources/Dialogue/3DsceneTransition.dialogue"
+dest_files=["res://.godot/imported/3DsceneTransition.dialogue-9e1e9a21083d87437532ca83ea58091f.tres"]
+
+[params]
+

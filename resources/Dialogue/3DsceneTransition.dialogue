@@ -1,0 +1,7 @@
+~ start
+
+Manny: ok so I was going to go over a previous game that I made here in this scene, but instead I got sidetracked and wanted to make funny looking transitions
+Manny: This is the transition
+
+do GlobalSceneInteractor.attemptFunctionCall("MannyGame","gotoNext")
+=> END

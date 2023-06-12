@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Learn Game"
-run/main_scene="res://Scenes/first_scene.tscn"
+run/main_scene="res://Scenes/first 11 scenes/first_scene.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,12 @@ GlobalAudioController="*res://autoload/GlobalAudioController.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GlobalSceneInteractor="*res://autoload/GlobalSceneInteractor.gd"
 CommandLine="*res://autoload/CommandLine.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -82,7 +88,7 @@ ui_enter={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/Dialogue/testDialogue.dialogue", "res://resources/testDialogue.dialogue", "res://resources/Dialogue/3DScene.dialogue", "res://resources/Dialogue/MannyGame.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/Dialogue/testDialogue.dialogue", "res://resources/testDialogue.dialogue", "res://resources/Dialogue/3DScene.dialogue", "res://resources/Dialogue/MannyGame.dialogue", "res://resources/Dialogue/3DsceneTransition.dialogue", "res://resources/Dialogue/portalAttempt.dialogue")
 
 [rendering]
 
