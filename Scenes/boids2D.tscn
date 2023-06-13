@@ -5,9 +5,60 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Flock" type="Node2D" parent="."]
+
+[node name="Boid" type="Node2D" parent="Flock"]
 position = Vector2(353, 284)
 script = ExtResource("1_gce8b")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid2" type="Node2D" parent="Flock"]
+position = Vector2(498, 149)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid2"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid3" type="Node2D" parent="Flock"]
+position = Vector2(737, 217)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid3"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid4" type="Node2D" parent="Flock"]
+position = Vector2(629, 369)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid4"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid5" type="Node2D" parent="Flock"]
+position = Vector2(964, 531)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid5"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid6" type="Node2D" parent="Flock"]
+position = Vector2(1109, 396)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid6"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid7" type="Node2D" parent="Flock"]
+position = Vector2(1348, 464)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid7"]
+texture = ExtResource("1_iqebp")
+
+[node name="Boid8" type="Node2D" parent="Flock"]
+position = Vector2(1240, 616)
+script = ExtResource("1_gce8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flock/Boid8"]
 texture = ExtResource("1_iqebp")
